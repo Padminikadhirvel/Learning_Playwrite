@@ -4,17 +4,16 @@ const maxAttempts=5;
 do{
     attempt++;
     const randomNum=Math.random();
-    console.log(`Attempt ${attempt}: Random number generated: ${randomNum}`);
     if(randomNum>0.6){
         success=true;
-        console.log("API call success.");
+        console.log(`Attempt ${attempt} : ✅ SUCCESS (Response 200 OK)`);
     }else{
-        console.log("API call failed. Retrying...");
+        console.log(`Attempt ${attempt} : ❌ FAILED (Timeout/Error)`);
     }
 }while(!success && attempt < maxAttempts);
 
 if(success){
-    console.log("API call succeeded after " + attempt + " attempts.");
+    console.log(`API call PASSED after ${attempt} attempt(s).`);
 }else{
-    console.log("API call failed after " + maxAttempts + " attempts.");
+    console.log(`API call failed after ${maxAttempts} attempts.`);
 }
