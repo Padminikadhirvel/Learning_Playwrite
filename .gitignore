@@ -6,3 +6,7 @@ dist/
 build/
 .env
 .DS_Store
+
+# Playwright
+/blob-report/
+/playwright/.auth/
