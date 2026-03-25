@@ -1,0 +1,103 @@
+1. What is an object in JavaScript?
+
+An object is a collection of key-value pairs.
+
+const user = {
+  name: "John",
+  age: 25,
+};
+
+👉 Here:
+
+name, age→ keys (properties)
+"John", 25 → values
+
+---------------------------------------------------
+
+2. How do you access object properties?
+  a. Using dot notation
+        console.log(user.name); // John
+
+ b. Using bracket notation
+       console.log(user["age"]); // 25
+
+---------------------------------------------------
+
+3. Difference between dot and bracket notation
+
+// Dynamic property access
+const key = "email";
+console.log(user[key]);
+
+user[key];      // email
+user.key;       // undefined
+
+------------------------------------------------------
+
+4. How to add and delete properties?
+
+A. Add property
+user.city = "Chennai";
+user["country"] = "India";
+
+B. Delete property
+delete user.age;
+
+------------------------------------------------------------------
+
+5. How to check if a property exists?
+
+Method 1: in operator
+    "name" in user; // true
+
+Method 2: hasOwnProperty()
+    user.hasOwnProperty("age"); // false (if deleted)
+
+-------------------------------------------------------------------------------
+
+6. What is Object.keys()?
+
+Returns array of keys
+
+Object.keys(user);
+// ["name", "isActive", "city", "country"]
+
+----------------------------------------------------------------------------
+
+7. What is Object.values()?
+
+Returns array of values
+
+Object.values(user);
+// ["John", true, "Chennai", "India"]
+
+----------------------------------------------------------------------------
+
+8. What is Object.entries()?
+
+Returns array of [key, value] pairs
+
+Object.entries(user);
+// [["name", "John"], ["isActive", true]]
+
+---------------------------------------------------------------------------
+
+9. How to loop through an object?
+
+Method 1: for...in
+    for (let key in user) {
+    console.log(key, user[key]);
+    }
+
+Method 2: Using Object.entries()
+    for (let [key, value] of Object.entries(user)) {
+    console.log(key, value);
+    }
+
+Method 3: Using Object.keys()
+    Object.keys(user).forEach(key => {
+    console.log(key, user[key]);
+    });
+
+
+
